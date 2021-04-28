@@ -1,1 +1,4 @@
 com\titan\edufinity\model\user\User.class
+com\titan\edufinity\model\course\Course.class
+com\titan\edufinity\model\assessment\QuizQuestion.class
+com\titan\edufinity\model\assessment\Assessment.class
