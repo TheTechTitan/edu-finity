@@ -1,12 +1,13 @@
 package com.titan.edufinity.model.assessment;
 
+import com.titan.edufinity.model.course.QuizQuestion;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
+@Entity(name = "assessment")
 @Table(name = "assessment")
 @Data
 public class Assessment {
@@ -20,6 +21,4 @@ public class Assessment {
     private int score;
     private LocalDateTime attemptedDate;
 
-    @OneToMany(mappedBy = "assessment")
-    private List<QuizQuestion> quizQuestionList;
 }

@@ -3,13 +3,15 @@ import {Typography, Button, AppBar, Card, CardContent, CardMedia, CssBaseline, G
 import {MenuBookTwoTone} from '@material-ui/icons';
 import useStyles from './styles';
 
+import {Link} from 'react-router-dom'
 
 
-const Home = () =>{
+
+const Home = (props) =>{
 
     const classes = useStyles();
     const [cards,setCards]= useState([]);
-    //const [testCards,setTestCards]= useState([1,2,3,4,5]);
+    const [user,setUser]= useState(2);
     
     useEffect(()=>{
         fetch('http://localhost:9292/services/courses', {
@@ -26,6 +28,12 @@ const Home = () =>{
 			alert(err);
 		});
     }, []);
+
+    const handleCourseButton = (cardId) =>{
+
+		console.log(cardId, " card clickedd");
+		props.history.push(`/course/${cardId}`, user);
+	}
 
 
     return(
@@ -74,7 +82,7 @@ const Home = () =>{
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small" color="secondary">Attempt</Button>
+                                        <Button size="small" color="secondary" onClick={() =>handleCourseButton(card.cid)}>Attempt</Button>                                       
                                     </CardActions>
                                 </Card>
                             </Grid>
