@@ -10,4 +10,7 @@ public interface CourseService {
     Course save(Course course);
     Course findById(int id);
     List<Course> findAll();
+
+    void uploadDoc(int id,byte[] file);
+    void uploadImage(int id,byte[] file);
 }

@@ -67,7 +67,7 @@ const Home = (props) =>{
                                 <Card className={classes.card}>
                                     <CardMedia 
                                         className={classes.cardMedia} 
-                                        image="https://source.unsplash.com/random"
+                                        image={"data:image/jpg;base64," + card.courseImage}
                                         title="Image titles"
                                     />
                                     <CardContent className={classes.cardContent}>

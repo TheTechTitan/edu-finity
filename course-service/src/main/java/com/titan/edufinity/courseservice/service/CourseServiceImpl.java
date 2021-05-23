@@ -6,6 +6,7 @@ import com.titan.edufinity.model.course.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 import java.util.Optional;
 
@@ -34,5 +35,18 @@ public class CourseServiceImpl implements CourseService{
     @Override
     public List<Course> findAll() {
         return courseRepository.findAll();
+    }
+
+    @Override
+    public void uploadDoc(int id,byte[]  file) {
+       courseRepository.uploadDoc(id, file);
+    }
+
+    @Override
+    public void uploadImage(int id, byte[] file) {
+
+        System.out.println("here");
+        courseRepository.uploadImage(id, file);
+
     }
 }

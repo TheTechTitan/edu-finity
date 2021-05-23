@@ -9,6 +9,15 @@ const useStyles = makeStyles ((theme)=>({
     icon : {
         marginRight: '20px',
     },
+    pdfContainer:{
+        width: '100%',
+        height: '800px',
+        backgroundColor: '#e4e4e4',
+        overflowY: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     cardGrid:{
         padding: '20px 0'
     },
@@ -25,7 +34,7 @@ const useStyles = makeStyles ((theme)=>({
     },
     footer:{
         backgroundColor: theme.palette.background.paper,
-        padding: '50px 0'
+        padding: '50px 0',
     },
     resourceview:{
         //backgroundColor : theme.palette.background.paper,

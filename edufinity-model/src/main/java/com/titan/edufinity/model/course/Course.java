@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "course")
 @Table(name = "course")
 @Data
 public class Course {
@@ -18,6 +18,11 @@ public class Course {
     private String courseName;
     private String type;
     private String domain;
+    @Lob
+    private byte[] courseDocument;
+
+    @Lob
+    private byte[] courseImage;
 
     @OneToMany(targetEntity = QuizQuestion.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id", referencedColumnName = "cid")
