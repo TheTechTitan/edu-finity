@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3000/quiz/summary"})
 @RestController
@@ -25,12 +26,13 @@ public class AssessmentServiceController {
     }
 
     @GetMapping(value = "/{id}")
-    public Response getAssessment(@PathVariable int id, @RequestParam(required = false) String type) {
+    public Response getAssessment(@PathVariable int id, @RequestParam(required = false) String type) throws ExecutionException, InterruptedException {
 
         System.out.println("request came on "+ LocalDateTime.now() + " +++++++++");
         if(type==null){
             return new SimpleResponse(assessmentService.findById(id));
         }else{
+            System.out.println("assessmnt req came here");
             return assessmentService.findDetailedResponse(id);
         }
     }
